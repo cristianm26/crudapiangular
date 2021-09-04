@@ -1,0 +1,91 @@
+<div class="container mt-2">
+    <form [formGroup]="pacienteForm" (ngSubmit)="guardar()">
+        <div class="mb-3">
+            <label for="nombres" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombres" formControlName="nombres"
+                placeholder="Ingrese su Nombre">
+            <span class="text-danger ms-2"
+                *ngIf="pacienteForm.get('nombres')?.hasError('required') && pacienteForm.get('nombres')?.touched">
+                El nombre <strong> es requerido</strong>
+            </span>
+            <span class="text-danger ms-2"
+                *ngIf="pacienteForm.get('nombres')?.hasError('minlength') && pacienteForm.get('nombres')?.touched">
+                El nombre debe tener <strong> como minimo 4 carácteres</strong>
+            </span>
+        </div>
+        <div class="mb-3">
+            <label for="apellidos" class="form-label">Apellido</label>
+            <input type="text" class="form-control" id="apellidos" formControlName="apellidos"
+                placeholder="Ingrese su Apellido">
+            <span class="text-danger ms-2"
+                *ngIf="pacienteForm.get('apellidos')?.hasError('required') && pacienteForm.get('apellidos')?.touched">
+                El apellidos <strong> es requerido</strong>
+            </span>
+            <span class="text-danger ms-2"
+                *ngIf="pacienteForm.get('apellidos')?.hasError('minlength') && pacienteForm.get('apellidos')?.touched">
+                El apellidos debe tener <strong> como minimo 4 carácteres</strong>
+            </span>
+        </div>
+        <div class="mb-3">
+            <label for="edad" class="form-label">Edad</label>
+            <input type="number" class="form-control" id="Edad" formControlName="edad" placeholder="Ingrese su Edad">
+            <span class="text-danger ms-2"
+                *ngIf="pacienteForm.get('edad')?.hasError('required') && pacienteForm.get('edad')?.touched">
+                La edad <strong> es requerido</strong>
+            </span>
+        </div>
+        <div class="mb-3">
+            <label for="genero" class="form-label">Genero</label>
+            <select class="form-select" aria-label="Default select example" formControlName="sexo">
+                <option selected>Seleccione una Opción</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="dni" class="form-label">DNI</label>
+            <input type="text" class="form-control" id="dni" placeholder="Ingrese su DNI" formControlName="dni">
+            <span class="text-danger ms-2"
+                *ngIf="pacienteForm.get('dni')?.hasError('required') && pacienteForm.get('dni')?.touched">
+                El DNI <strong> es requerido</strong>
+            </span>
+        </div>
+        <div class="mb-3">
+            <label for="tipo_sangre" class="form-label">Tipo de Sangre</label>
+            <input type="text" class="form-control" id="tipo_sangre" placeholder="Ingrese su Tipo de Sangre"
+                formControlName="tipo_sangre">
+            <span class="text-danger ms-2"
+                *ngIf="pacienteForm.get('tipo_sangre')?.hasError('required') && pacienteForm.get('tipo_sangre')?.touched">
+                El tipo de sangre <strong> es requerido</strong>
+            </span>
+        </div>
+        <div class="mb-3">
+            <label for="telefono" class="form-label">Telefono</label>
+            <input type="text" class="form-control" id="telefono" placeholder="Ingrese su telefono"
+                formControlName="telefono">
+            <span class="text-danger ms-2"
+                *ngIf="pacienteForm.get('telefono')?.hasError('required') && pacienteForm.get('telefono')?.touched">
+                El telefono <strong> es requerido</strong>
+            </span>
+        </div>
+        <div class="mb-3">
+            <label for="correo" class="form-label">Email</label>
+            <input type="email" class="form-control" id="correo" placeholder="Ingrese su correo"
+                formControlName="correo">
+            <span class="text-danger ms-2"
+                *ngIf="pacienteForm.get('correo')?.hasError('required') && pacienteForm.get('correo')?.touched">
+                El correo <strong> es requerido</strong>
+            </span>
+        </div>
+        <div class="mb-3">
+            <label for="direccion" class="form-label">Direccion</label>
+            <input type="text" class="form-control" id="direccion" placeholder="Ingrese su direccion"
+                formControlName="direccion">
+            <span class="text-danger ms-2"
+                *ngIf="pacienteForm.get('direccion')?.hasError('required') && pacienteForm.get('direccion')?.touched">
+                El direccion <strong> es requerido</strong>
+            </span>
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+</div>

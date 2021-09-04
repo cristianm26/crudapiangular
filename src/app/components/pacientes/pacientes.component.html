@@ -1,0 +1,54 @@
+<div class="container" mt-2>
+    <h3 class="text-center">Listado de Pacientes</h3>
+
+    <div class="container mt-2">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button class="btn btn-primary me-md-2" type="button" routerLink="add">Crear</button>
+
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombres</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Edad</th>
+                    <th scope="col">Sexo</th>
+                    <th scope="col">DNI</th>
+                    <th scope="col">Tipo de <br>Sangre</th>
+                    <th scope="col">Telefono</th>
+                    <th scope="col">Correo</th>
+                    <th scope="col">Dirección</th>
+                    <th>
+                        Acciones
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let paciente of pacientes">
+                    <td>{{paciente.id}}</td>
+                    <td>{{paciente.nombres}}</td>
+                    <td>{{paciente.apellidos}}</td>
+                    <td>{{paciente.edad}}</td>
+                    <td>{{paciente.sexo}}</td>
+                    <td>{{paciente.dni}}</td>
+                    <td>{{paciente.tipo_sangre}}</td>
+                    <td>{{paciente.telefono}}</td>
+                    <td>{{paciente.correo}}</td>
+                    <td>{{paciente.direccion}}</td>
+                    <td>
+                        <button class="btn btn-info" [routerLink]="['edit',paciente.id]">
+                            Edi
+                        </button>
+                        <button class="btn btn-danger" (click)="eliminar(paciente.id)">
+                            Del
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
